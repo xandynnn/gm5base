@@ -1,27 +1,5 @@
 var Util = {
-	reloadImages: function (){
-		$('.lazyImg').each(function () {
-			if (!$(this).hasClass('loaded')) {
-				$(this).css({'display': 'block'});
-				var self = $(this);
-				$(this).find('.lazy').error(function () {
-					self.addClass('loaded');
-					self.css('background-image', 'url(images/default-image.png)');
-					self.animate({'opacity': '1'}, 300, function () {
-						self.parent().addClass('animated');
-					});
-				});
-				$(this).find('.lazy').imageLoad(function () {
-					self.addClass('loaded');
-					self.css('background-image', 'url(' + $(this).attr('src') + ')');
-					self.animate({'opacity': '1'}, 300, function () {
-						self.parent().addClass('animated');
-					});
-				});
-			}
-		});
-	},
-	setCookie: function ( nome, valor, dias ){
+	setCookie: function (nome, valor, dias) {
 		if (!dias) {
 			dias = 0;
 		}
@@ -32,7 +10,7 @@ var Util = {
 		} else var expires = "";
 		document.cookie = nome + "=" + valor + expires + "; path=/";
 	},
-	getCookie: function ( cname ) {
+	getCookie: function (cname) {
 		var name = cname + "=";
 		var decodedCookie = decodeURIComponent(document.cookie);
 		var ca = decodedCookie.split(';');
@@ -47,28 +25,25 @@ var Util = {
 		}
 		return "";
 	},
-	strTruncate: function(str, limite, fim){
+	strTruncate: function (str, limite, fim) {
 		var qtd = limite || 50;
 		var fim = fim || "...";
 		str = jQuery.trim(str);
-		if( str.length < qtd ){
+		if (str.length < qtd) {
 			return str;
 		}
 		return str.substr(0, qtd) + fim;
 	},
-	isMobile: function(){
+	isMobile: function () {
 		return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 	},
-	isPortrait: function(){
+	isPortrait: function () {
 		return (window.innerHeight > window.innerWidth);
 	},
-	isLandscape: function(){
-		return ( window.orientation === 90 || window.orientation === -90 );
+	isLandscape: function () {
+		return (window.orientation === 90 || window.orientation === -90);
 	},
-	montaUrl: function(){
-		return true;
-	},
-	getUrlParam: function(param, url) {
+	getUrlParam: function (param, url) {
 		param = param.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
 		var regexS = "[\\?&]" + param + "=([^&#]*)";
 		var regex = new RegExp(regexS);
@@ -85,13 +60,4 @@ var Util = {
 			return decodeURI(results[1]);
 		}
 	}
-};
-
-$.fn.imageLoad = function (fn) {
-	this.load(fn);
-	this.each(function () {
-		if (this.complete && this.naturalWidth !== 0) {
-			$(this).trigger('load');
-		}
-	});
 };

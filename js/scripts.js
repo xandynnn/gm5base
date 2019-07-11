@@ -1,7 +1,7 @@
 /* Javascript document
 
-	*	Base 2
-	* 	18/09/2018
+	*	Base Site
+	* 	11/07/2019
 	*	Author: GM5
 
 */
@@ -9,13 +9,12 @@
 var systemBusy = false;
 var Controller = {
 	getController: function () {
-		var self = this;
-		$('*[data-controller]').each(function(){
+		$('*[data-controller]').each(function () {
 			var elem = $(this);
 			var elemController = elem.data("controller");
-
-			eval('Controller.' + elemController + '();');
-
+			if ( typeof eval('Controller.' + elemController) === "function" ) {
+				eval('Controller.' + elemController + '();');
+			}
 		});
 	},
 	global: function () {
@@ -25,11 +24,15 @@ var Controller = {
 		//
 
 	},
-	home: function(){
+	home: function () {
 
 		//
 		//	Scripts da home
 		//
+		var x = $('.myHomezinha');
+		x.css({
+			'background': 'red'
+		});
 
 	}
 };
