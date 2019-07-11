@@ -7,6 +7,20 @@ Padrão de desenvolvimento de Sites e Aplicações Front-End.
 - Visual Studio Code
 - Extensões ( **Easy Less** , **EditorConfig for VS Code**, **TODO Highlight** )
 
+Itens não obrigatórios:
+- FiraCode: https://github.com/tonsky/FiraCode, Após a instalação basta incluir nas configurações do editor a linha abaixo:
+
+```
+{
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.fontWeight": "450"
+}
+```
+
+- VS Code Icons https://github.com/vscode-icons/vscode-icons
+
+
 ## 2 - Arquivos de configuração do editor e do projeto
 
 ### .editorconfig
