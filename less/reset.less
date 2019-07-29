@@ -1,0 +1,54 @@
+/* LESS document
+
+*	Base Site
+* 	11/07/2019
+*	Author: GM5
+*	RESET CSS
+
+*/
+header, section, footer, article, figcaption, hgroup, figure, details, aside, img, nav, time, summary, menu, main {display:block;}
+audio, canvas, video, progress {display:inline-block;*display:inline;*zoom:1;vertical-align:baseline;}
+audio:not([controls]){display:none;height:0;}
+input[type="search"],
+input[type="submit"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	border-radius:0;
+	-webkit-border-radius:0;
+}
+
+*{margin:0;padding:0;outline:none;}
+a:active,
+a:selected,
+a:focus,
+a:visited{border:none;outline:none;text-decoration:none;}
+a:focus{
+	outline:none;
+	text-decoration:none;
+}
+
+html {
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+	> object{
+		display:none;
+	}
+}
+
+//
+//	Image reset
+//
+img{
+	max-width:100%;
+	height:auto;
+	display:block;
+}
+
+//
+//	Page
+//
+body{
+	background:@branco;
+}

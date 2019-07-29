@@ -10,7 +10,7 @@
 	<!-- favicon.ico no diretório raiz -->
 
 	<!-- Folha de estilo -->
-	<link href="css/bundle/min/styles.css" rel="stylesheet" />
+	<link href="dist/css/styles.min.css" rel="stylesheet" />
 
 </head>
 <body>

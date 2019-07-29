@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* LESS document
+
+*	Base Site
+* 	11/07/2019
+*	Author: GM5
+
+*/
+@import url('bootstrap.css');
+@import url('owl.carousel.min.css');
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/fa-brands-400.eot");
+  src: url("../fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("../fonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/fa-regular-400.eot");
+  src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+@font-face {
+  font-family: 'Font Awesome 5 Free Solid';
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Safari */
+    -o-transform: rotate(0deg);
+    /* Opera */
+    -moz-transform: rotate(0deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    /* Safari */
+    -o-transform: rotate(359deg);
+    /* Opera */
+    -moz-transform: rotate(359deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+}
+@-moz-keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Safari */
+    -o-transform: rotate(0deg);
+    /* Opera */
+    -moz-transform: rotate(0deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    /* Safari */
+    -o-transform: rotate(359deg);
+    /* Opera */
+    -moz-transform: rotate(359deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+}
+@-o-keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Safari */
+    -o-transform: rotate(0deg);
+    /* Opera */
+    -moz-transform: rotate(0deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    /* Safari */
+    -o-transform: rotate(359deg);
+    /* Opera */
+    -moz-transform: rotate(359deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+}
+@keyframes move {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Safari */
+    -o-transform: rotate(0deg);
+    /* Opera */
+    -moz-transform: rotate(0deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    /* Safari */
+    -o-transform: rotate(359deg);
+    /* Opera */
+    -moz-transform: rotate(359deg);
+    /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /* Internet Explorer */
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

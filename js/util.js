@@ -1,3 +1,11 @@
+/* Javascript document
+
+*	Base Site
+* 	11/07/2019
+*	Author: GM5
+
+*/
+
 var Util = {
 	setCookie: function (nome, valor, dias) {
 		if (!dias) {

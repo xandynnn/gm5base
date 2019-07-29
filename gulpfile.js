@@ -1,21 +1,22 @@
 const {
 	src,
 	dest,
-	watch
+	watch,
+	parallel
 } = require('gulp');
 const concat = require('gulp-concat');
 const stripDebug = require('gulp-strip-debug');
 const uglify = require('gulp-uglify');
 const less = require('gulp-less');
 const minifyCSS = require('gulp-csso');
+const rename = require('gulp-rename');
 
 function minscripts() {
 	return src('js/*.js')
 		.pipe(concat('bundle.js'))
 		.pipe(stripDebug())
 		.pipe(uglify())
-		.pipe(dest('./js/bundle/'))
-		.pipe(browserSync.stream());
+		.pipe(dest('./dist/js/'));
 }
 
 function lesscss() {
@@ -27,10 +28,10 @@ function lesscss() {
 function mincss() {
 	return src('css/*.css')
 		.pipe(concat('styles.css'))
-		.pipe(dest('./css/bundle/'))
+		.pipe(dest('./dist/css/'))
 		.pipe(minifyCSS())
-		.pipe(dest('./css/bundle/min/'))
-		.pipe(browserSync.stream());
+		.pipe(rename('styles.min.css'))
+		.pipe(dest('./dist/css/'));
 }
 
 function mwatch() {
@@ -40,3 +41,4 @@ function mwatch() {
 }
 
 exports.watch = mwatch;
+exports.prod = parallel(lesscss, mincss, minscripts);
