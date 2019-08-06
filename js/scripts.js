@@ -9,10 +9,10 @@
 var systemBusy = false;
 var Controller = {
 	getController: function () {
-		$('*[data-controller]').each(function(){
+		$('*[data-controller]').each(function () {
 			var elem = $(this);
 			var elemController = elem.data("controller");
-			if ( typeof eval('Controller.' + elemController) === "function" ){
+			if ( typeof eval('Controller.' + elemController) === "function" ) {
 				eval('Controller.' + elemController + '();');
 			}
 		});
