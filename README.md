@@ -64,7 +64,7 @@ insert_final_newline = true
 
 ```
 ## Das definições do código de escrita
-- Para HTML
+- **Para HTML**
 	- Chamadas JS devem obrigatoriamente estar no final do documento HTML
 	- Tags <img> devem ter obrigatoriamente um alt com a descrição da imagem e a tag de fechamento.
 	```
@@ -87,7 +87,7 @@ insert_final_newline = true
 	```
 	<a href="quem-somos.php" title="Ir para página Quem somos">Quem somos</a>
 	```
-- Para JS
+- **Para JS**
 
 	Foi utilizado o documento de Style Guides do AirBnB como referência. ( https://github.com/airbnb/javascript )
 
@@ -169,10 +169,10 @@ insert_final_newline = true
 	// Bom
 	$('.sidebar ul').hide();
 
-	//	Ruim
+	// Ruim
 	$('.sidebar').find('ul').hide();
 	```
-- Para CSS / LESS
+- **Para CSS / LESS**
 	- Classes e IDs devem estar escritos no formato **camelCase**:
 	```
 	.minhaClasse{
@@ -231,7 +231,7 @@ insert_final_newline = true
 		}
 	}
 	```
-- Para Imagens
+- **Para Imagens**
     - Imagem deve ter um nome descritivo em português separado por hífen **"-"** e sem acentuação ( caracteres especiais ) como por exemplo **logo-arariba.jpg**
 
 ###### Alexandre Mattos Torrão
