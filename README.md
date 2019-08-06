@@ -66,7 +66,27 @@ insert_final_newline = true
 ## Das definições do código de escrita
 - Para HTML
 	- Chamadas JS devem obrigatoriamente estar no final do documento HTML
-	-
+	- Tags <img> devem ter obrigatoriamente um alt com a descrição da imagem e a tag de fechamento.
+	```
+		<img src="../img/logo-projeto.png" alt="Projeto" />
+	```
+	- O HTML deve se manter todo identado por TabSize e com 4 espaçamentos como no editorConfig.
+	```
+	<nav>
+		<ul>
+			<li>
+				<a href="link1.php">Link 1</a>
+			</li>
+			<li>
+				<a href="link2.php">Link 2</a>
+			</li>
+		</ul>
+	</nav>
+	```
+	- Links devem obrigatóriamente ter um title
+	```
+	<a href="quem-somos.php" title="Ir para página Quem somos">Quem somos</a>
+	```
 - Para JS
 
 	Foi utilizado o documento de Style Guides do AirBnB como referência. ( https://github.com/airbnb/javascript )
@@ -93,26 +113,45 @@ insert_final_newline = true
 	```
 	- Nunca mudar ou reatribuir valores de parametros, crie uma variável e atribua o valor a ela:
 	```
-	// Correto
+	// Bom
 	function f2 (obj) {
 		var novoObjeto = obj + 1;
 	}
 
-	//	Errado
+	// Ruim
 	function f2 (obj) {
 		obj = obj + 1;
 	}
 	```
 	- Variáveis devem ser declaradas sempre
 	```
-	// Correto
+	// Bom
 	var x = 1;
 
-	//Errado
+	// Ruim
 	x = 1;
 	```
-	- Nome de métodos devem ter no máximo 25 caracteres e devem ter significado objetivo, por exemplo: **function cortaPalavras () {};**
-	- Usar comparação reduzida para booleanos e explícitas para strings e números. Exemplo: **if (isValid) {}** e para strings **if (name !== '') {}** e números **if (collection.length > 0) {}**
+	- Nome de métodos devem ter no máximo 25 caracteres e devem ter significado objetivo, por exemplo:
+	```
+	function cortaPalavras () {};
+	```
+	- Usar comparação reduzida para booleanos e explícitas para strings e números. Exemplo:
+	```
+	// Para Booleanos
+	if (isValid) {
+		...
+	}
+
+	// Para strings
+	if (name !== '') {
+		...
+	}
+
+	//	Para números
+	if (collection.length > 0) {
+		...
+	}
+	```
 	- Para encapsulamento utilizamos o Brace Style como no exemplo: https://eslint.org/docs/rules/brace-style.html
 	```
 	if (isValid) {
@@ -121,7 +160,7 @@ insert_final_newline = true
 		...
 	}
 	```
-	- Utilizar apenas o seletor curto do jQuery
+	- Utilizar apenas o seletor curto do jQuery **$**
 	```
 	$('table').hide();
 	```
@@ -133,9 +172,65 @@ insert_final_newline = true
 	//	Ruim
 	$('.sidebar').find('ul').hide();
 	```
-- Para CSS
-	- Classes e IDs devem estar escritos no formato **camelCase**
-	- Adotar uma língua para criação das classes, em inglês **"marginTop"** ou em português **"margemSuperior"**
+- Para CSS / LESS
+	- Classes e IDs devem estar escritos no formato **camelCase**:
+	```
+	.minhaClasse{
+		color: red;
+	}
+	```
+	- Adotar um idioma para criação das classes, como por exemplo:
+	```
+	// Inglês
+	.marginTop{
+		margin-top: 10px;
+	}
+
+	// Português
+	.margemSuperior{
+		margin-top: 10px;
+	}
+	```
+	- O Less deve estar estruturado por componente a fim de reutilização do código em questão e aninhado, como por exemplo:
+	```
+	.filtros{
+		.grupo{
+			label{
+				color: '#000';
+			}
+			input{
+				color: '#2d2d2d';
+			}
+		}
+	}
+	```
+	- As Media Queries devem estar no final da classe pai a fim de que quando tivermos que reaproveitar o código em outro projeto, seja incluido todo o código encapsulado. Um grupo encapsulado não pode ter mais de uma media query igual;
+	```
+	.filtros{
+		.grupo{
+			label{
+				color: '#000';
+			}
+			input{
+				color: '#2d2d2d';
+			}
+		}
+		@media only screen and (max-width: 991px), only screen and (max-device-width: 991px){
+			.grupo{
+				label{
+					color: '#f00';
+				}
+			}
+		}
+		@media only screen and (max-width: 767px), only screen and (max-device-width: 767px){
+			.grupo{
+				input{
+					color: '#00f';
+				}
+			}
+		}
+	}
+	```
 - Para Imagens
     - Imagem deve ter um nome descritivo em português separado por hífen **"-"** e sem acentuação ( caracteres especiais ) como por exemplo **logo-arariba.jpg**
 
